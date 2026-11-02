@@ -1,0 +1,16 @@
+# ---- 系统 & 编辑器 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+*.iml
+
+# ---- 日志 ----
+*.log
+logs/
+
+# ---- 本地私有配置 ----
+.env.local
+.env.*.local
