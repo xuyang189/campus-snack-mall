@@ -1,5 +1,12 @@
 # 校园零食在线购物系统
 
+![Vue 3](https://img.shields.io/badge/Vue-3.5-42b883?logo=vue.js&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.6-6DB33F?logo=springboot&logoColor=white)
+![MyBatis-Plus](https://img.shields.io/badge/MyBatis--Plus-3.5.7-red)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 一个前后端分离的校园零食电商项目，包含**用户端购物商城**、**商家端店铺管理**、**管理端后台**三套界面，覆盖商品、购物车、订单、地址、分类、公告、统计等完整业务链路。
 
 适合作为课程设计 / 毕业设计参考，也可作为 Vue 3 + Spring Boot 3 前后端分离项目的脚手架。
@@ -31,6 +38,30 @@
 - 全站订单查看与状态调整
 - 平台统计概览
 
+## 界面预览
+
+### 用户端
+
+| 首页 | 商品列表 |
+| --- | --- |
+| ![首页](docs/screenshots/01-home.jpg) | ![商品列表](docs/screenshots/02-products.jpg) |
+
+| 商品详情 | 登录 |
+| --- | --- |
+| ![商品详情](docs/screenshots/03-product-detail.jpg) | ![登录](docs/screenshots/04-login.jpg) |
+
+### 商家端
+
+| 商品管理（提交即上架） | 经营概览 |
+| --- | --- |
+| ![商家商品管理](docs/screenshots/05-merchant-products.jpg) | ![商家总览](docs/screenshots/06-merchant-dashboard.jpg) |
+
+### 管理端
+
+| 管理控制台 | 商品管理 |
+| --- | --- |
+| ![管理控制台](docs/screenshots/07-admin-dashboard.jpg) | ![管理端商品管理](docs/screenshots/08-admin-products.jpg) |
+
 ## 目录结构
 
 ```
@@ -49,16 +80,19 @@
 │   ├── campus_snack_mall.sql    # 建库建表 + 演示数据（含 11 个商品）
 │   ├── upload/products/         # 演示商品图
 │   └── pom.xml
-└── frontend/                    # Vue 3 前端
-    ├── src/
-    │   ├── api/                 # 按模块封装的接口
-    │   ├── layouts/             # 四种布局：主站 / 登录 / 商家 / 管理
-    │   ├── views/               # 页面（user / merchant / admin / auth / product）
-    │   ├── stores/              # Pinia：登录态、购物车
-    │   ├── router/
-    │   └── utils/               # http、图片地址、格式化、存储
-    ├── .env.development         # 开发环境接口地址
-    └── vite.config.js           # 端口 5173 + /api、/upload 代理
+├── frontend/                    # Vue 3 前端
+│   ├── src/
+│   │   ├── api/                 # 按模块封装的接口
+│   │   ├── layouts/             # 四种布局：主站 / 登录 / 商家 / 管理
+│   │   ├── views/               # 页面（user / merchant / admin / auth / product）
+│   │   ├── stores/              # Pinia：登录态、购物车
+│   │   ├── router/
+│   │   └── utils/               # http、图片地址、格式化、存储
+│   ├── .env.development         # 开发环境接口地址
+│   ├── .env.example             # 环境变量模板
+│   └── vite.config.js           # 端口 5173 + /api、/upload 代理
+├── docs/screenshots/            # README 使用的界面截图
+└── .github/workflows/build.yml  # CI：自动构建前后端
 ```
 
 ## 快速开始
@@ -136,7 +170,7 @@ POST /api/merchant/products        商家发布商品（提交即上架）
 PUT  /api/admin/products/{id}/audit 管理员审核 / 下架
 ```
 
-更完整的字段说明见 `backend/校园零食在线购物系统前后端联调接口文档_修正版.md`。
+更完整的字段说明见 [`接口文档`](backend/校园零食在线购物系统前后端联调接口文档_修正版.md)，开发过程记录见 [`开发文档`](backend/校园零食在线购物系统开发文档_修正版.md) 与 [`开发总结`](frontend/开发总结.md)。
 
 ## 数据库表
 
